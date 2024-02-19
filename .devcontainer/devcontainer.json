@@ -1,0 +1,11 @@
+{
+    "name": "Ubuntu",
+    "image": "mcr.microsoft.com/devcontainers/base:jammy",
+    "features": {
+        "ghcr.io/jarrodcolburn/features/flutter-sdk:0": {
+            "release": "stable"
+        }
+    },
+
+    "postCreateCommand": "sudo chmod -R a+rwx /flutter"
+}
