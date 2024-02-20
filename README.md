@@ -18,7 +18,7 @@ For the first time, the development environment might take a couple of minutes t
 # To run the flutter application as a web app:
 1. Enter the "app" directory by using the following command:
 ```
-    cd /workspaces/Flutter\ Application/app
+    cd /workspaces/Flutter-Application/app
 ```
 2. Run the application using the following command:
 ```
