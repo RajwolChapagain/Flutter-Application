@@ -1,7 +1,6 @@
 # DevContainer Environment
 
 ## Introduction
-
 "DevContainer" stands for Development Container. The Development part signifies that it is used for developing software and the Container part indicates that it utilizes Containerization technology. 
 
 Containerization is a technology which allows the bundling of an application with all of its dependencies including the required Operating System. This ensures that a containerized application will run on any platform since all the dependencies it needs to run come bundled with the application.
