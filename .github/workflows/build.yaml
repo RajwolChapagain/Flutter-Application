@@ -9,6 +9,7 @@ jobs:
       with:
         flutter-version: '3.16.9'
         channel: 'stable'
+    working-directory: ./app
     - run: flutter pub get
     - run: flutter test
     - run: flutter build web
