@@ -9,7 +9,15 @@ jobs:
       with:
         flutter-version: '3.16.9'
         channel: 'stable'
+    
+    - name: Install app dependencies
       working-directory: ./app
-    - run: flutter pub get
-    - run: flutter test
-    - run: flutter build web
+      run: flutter pub get
+    
+    - name: Run tests
+      working-directory: ./app
+      run: flutter test
+    
+    - name: Build for 
+      working-directory: ./app
+      run: flutter build web
