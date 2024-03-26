@@ -32,15 +32,15 @@ jobs:
 
     - name: Add changes
       run: git add -f ./build/web/ 
-
-    - name: Commit changes
-      run: git commit -m "Deploy"
     
     - name: Add email
       run: git config --global user.email "rajwolchapagain@gmail.com"
     
     - name: Add name
       run: git config --global user.name "Rajwol Chapagain"
+    
+    - name: Commit changes
+      run: git commit -m "Deploy"
     
     - name: Push changes
       run: git push origin gh-pages
