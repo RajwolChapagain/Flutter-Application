@@ -30,11 +30,11 @@ jobs:
     - name: Build for web
       run: flutter build web
 
-    - name: Display build contents
-      run: ls ./build/web -la
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main'
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build/web
+    - name: Add changes
+      run: git add ./build/web/ 
+
+    - name: Commit changes
+      run: git commit -m "Deploy"
+    
+    - name: Push changes
+      run: git push origin gh-pages
