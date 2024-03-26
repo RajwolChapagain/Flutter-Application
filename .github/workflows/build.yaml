@@ -39,7 +39,7 @@ jobs:
     - name: Add email
       run: git config --global user.email "rajwolchapagain@gmail.com"
     
-    -name: Add name
+    - name: Add name
       run: git config --global user.name "Rajwol Chapagain"
     
     - name: Push changes
