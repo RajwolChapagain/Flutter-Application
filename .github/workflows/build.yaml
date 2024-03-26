@@ -36,5 +36,9 @@ jobs:
     - name: Commit changes
       run: git commit -m "Deploy"
     
+    - name: Add credentials
+      run: git config --global user.email "rajwolchapagain@gmail.com"
+      run: git confgi --global user.name "Rajwol Chapagain"
+    
     - name: Push changes
       run: git push origin gh-pages
