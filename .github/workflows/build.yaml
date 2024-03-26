@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     defaults:
       run:
         working-directory: ./app
@@ -33,4 +35,4 @@ jobs:
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./web
+        publish_dir: ./build/web
