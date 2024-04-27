@@ -16,5 +16,6 @@ pkgs.mkShellNoCC {
     xz
     zip
     libGLU
+    google-chrome
   ];
 }
