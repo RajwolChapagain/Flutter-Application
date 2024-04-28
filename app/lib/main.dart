@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(const MyApp());
@@ -57,10 +58,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  final int goal = 10;
+  int goal = Random().nextInt(20) + 1;
   bool _showYouWon = false; // Track visibility of "You Won" text
 
   void _incrementCounter() {
+    if (_counter == goal)
+    {
+      return;
+    }
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -72,6 +77,13 @@ class _MyHomePageState extends State<MyHomePage> {
       if (_counter == goal)
       {
        _showYouWon = true; // Show "You Won" text when goal is reached
+       Future.delayed(Duration(seconds: 5), () {
+        setState(() {
+          _counter = 0;
+          _showYouWon = false;
+          goal = Random().nextInt(20) + 1;
+        });
+      });
       }
     });
   }
