@@ -50,12 +50,14 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
 
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  final int goal = 10;
 
   void _incrementCounter() {
     setState(() {
@@ -65,6 +67,10 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+      if (_counter == goal)
+      {
+        print("Game won");
+      }
     });
   }
 
@@ -105,6 +111,13 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            const Text(
+              'Goal:',
+            ),
+            Text(
+              '$goal',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
             const Text(
               'You have clicked the button this many times:',
             ),
