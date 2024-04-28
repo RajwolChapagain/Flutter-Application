@@ -58,6 +58,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   final int goal = 10;
+  bool _showYouWon = false; // Track visibility of "You Won" text
 
   void _incrementCounter() {
     setState(() {
@@ -69,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
       if (_counter == goal)
       {
-        print("Game won");
+       _showYouWon = true; // Show "You Won" text when goal is reached
       }
     });
   }
@@ -132,6 +133,16 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            const SizedBox(height: 20),
+            if (_showYouWon) // Conditionally show "You Won" text
+              const Text(
+                'YOU WON!',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.green,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
           ],
         ),
       ),
