@@ -92,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
+
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
@@ -111,13 +112,19 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'Goal:',
+            Row(mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+              const Text(
+                'Goal: ',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40)
+              ),
+              Text(
+                '$goal',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40)
+              ),
+            ],
             ),
-            Text(
-              '$goal',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            const SizedBox(height: 20),
             const Text(
               'You have clicked the button this many times:',
             ),
